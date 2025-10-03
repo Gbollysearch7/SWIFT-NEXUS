@@ -10,9 +10,9 @@ export interface ButtonProps
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = "default", size = "default", ...props }, ref) => {
     const variants = {
-      default: "bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-700 hover:to-blue-700",
-      outline: "border-2 border-purple-600 text-purple-600 hover:bg-purple-50",
-      ghost: "text-gray-700 hover:bg-gray-100",
+      default: "bg-accent text-white hover:bg-accent-dark",
+      outline: "border-2 border-accent text-accent hover:bg-accent/10",
+      ghost: "text-neutral-light hover:bg-dark-700",
     }
 
     const sizes = {
