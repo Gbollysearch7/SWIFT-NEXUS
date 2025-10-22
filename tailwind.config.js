@@ -52,29 +52,29 @@ export default {
         display: ['Space Grotesk', 'system-ui', 'sans-serif'],
       },
       colors: {
-        // Professional dark palette - clean and minimal
         dark: {
-          DEFAULT: '#0F0F0F',      // Main background - true dark
-          50: '#FAFAFA',
-          100: '#F5F5F5',
-          200: '#E5E5E5',
-          300: '#D4D4D4',
-          400: '#A3A3A3',
-          500: '#737373',
-          600: '#525252',
-          700: '#262626',           // Card backgrounds
-          800: '#171717',           // Elevated surfaces
-          900: '#0F0F0F',           // Base
+          DEFAULT: '#0D0D0D',
+          700: '#151515',
+          800: '#101010',
+          900: '#0D0D0D'
         },
         accent: {
-          DEFAULT: '#10B981',       // Emerald green - fresh, trustworthy
-          light: '#34D399',
-          dark: '#059669',
+          DEFAULT: '#D4AF37',
+          light: '#E5C964',
+          dark: '#9E8229',
         },
         neutral: {
-          DEFAULT: '#A1A1AA',       // Mid gray for body text
-          light: '#E4E4E7',         // Light gray for secondary text
-          lighter: '#F4F4F5',       // Almost white
+          DEFAULT: '#9CA3AF',
+          light: '#C6CBD3',
+          lighter: '#F4F1EE',
+        },
+        navy: {
+          DEFAULT: '#0F1E35',
+          700: '#132746',
+          800: '#0D1A2A'
+        },
+        energy: {
+          DEFAULT: '#FF1A1A'
         },
         ...{
           border: "hsl(var(--border))",

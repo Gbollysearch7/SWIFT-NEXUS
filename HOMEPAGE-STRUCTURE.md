@@ -1,323 +1,88 @@
-# Homepage Redesign - ConversionWise Structure
+# Swift Nexus Homepage Architecture (Authority Layout)
 
-## Overview
-Restructure the Rank First Marketing Agency homepage following ConversionWise's anatomy of high-converting homepages.
-
----
-
-## 1. HEADER SECTION
-**Current:** Basic navigation with logo and links
-**ConversionWise Model:**
-- Logo placeholder (left)
-- Navigation menu with icons (center/right)
-- Search bar
-- User account and cart icons (if applicable)
-
-**Action Items for Rank First:**
-- [ ] Add professional logo for "Rank First Marketing Agency"
-- [ ] Enhance navigation with smooth scroll anchors
-- [ ] Add CTA button in header ("Get Free Audit" or "Book a Call")
-- [ ] Ensure responsive mobile menu
-- [ ] Consider adding phone number or chat icon
+Primary palette: Obsidian Black `#0D0D0D`, Deep Navy `#0F1E35`, Gold Chrome `#D4AF37`, Bone White `#F4F1EE`, Shock Red `#FF1A1A` (sparingly for urgency). Typography stays Space Grotesk (display) + DM Sans (body).
 
 ---
 
-## 2. HERO SECTION
-**Current:** Headline + subheadline + dual CTAs + stats
-**ConversionWise Model:**
-- Headline promoting unique value proposition
-- Subheadline with supporting benefits
-- Call-to-action button (primary)
-
-**Action Items for Rank First:**
-- [x] Strong headline with value prop ✅
-- [x] Clear subheadline ✅
-- [x] Primary CTA: "Get My Free Growth Audit" ✅
-- [x] Secondary CTA: "Book a Strategy Call" ✅
-- [ ] Add hero image/graphic on right side (marketing dashboard, analytics visualization, or team photo)
-- [x] Include stats section below CTAs ✅
-
-**Copy Suggestions:**
-- Headline: *"Every great brand starts with ranking first"* ✅
-- Subheadline: Emphasize results (traffic, leads, revenue)
-- CTA: Make it action-oriented and benefit-driven
+## 1. Above-the-Fold Hero
+- Navigation: Logo left + About | Services | Case Studies | Pricing + dual CTAs `Request Audit` / `Book Consultation`.
+- Full-width command-center video background with dark gradient overlay.
+- Headline: “We Engineer Growth That Scales and Influence That Sticks.”
+- Sub-headline: “A marketing and influence consultancy that helps ambitious brands, leaders, and institutions turn strategy into measurable revenue and reputation.”
+- CTAs: `Request a Strategic Audit` (gold filled) + `Talk to a Strategist` (outline).
+- Stat strip anchored to bottom of hero: `+217% Traffic | $2.4M Revenue | 94% Retention`.
+- Sticky nav gains stronger Obsidian backdrop after scroll.
 
 ---
 
-## 3. VALUE PROPOSITION SECTION
-**Current:** Missing dedicated section
-**ConversionWise Model:**
-- Brief text featuring key benefit
-- Social proof (stars/ratings)
-- Secondary CTA
-
-**Action Items for Rank First:**
-- [ ] Add section after hero with single-sentence value prop
-- [ ] Include 5-star rating visualization
-- [ ] Add "As recommended by [authority/publication]" if applicable
-- [ ] Include trust badge or client logos
+## 2. Trust Banner
+- Deep Navy strip.
+- Copy: “Trusted by brands and public figures across 6 industries.”
+- Six grayscale logos that animate to gold on hover.
 
 ---
 
-## 4. TRANSFORMATION/PROCESS SECTION
-**Current:** Partially covered in About section
-**ConversionWise Model:**
-- "The Transformation" with 3 steps
-- Visual icons for each step
-- Clear progression (Step 1 → Step 2 → Step 3)
-
-**Action Items for Rank First:**
-- [ ] Create "How It Works" section with 3-step process:
-  - **Step 1:** Free Growth Audit (icon: magnifying glass/chart)
-  - **Step 2:** Custom Strategy Development (icon: document/plan)
-  - **Step 3:** Execute & Scale (icon: rocket/growth chart)
-- [ ] Add icons for visual interest
-- [ ] Include brief description for each step
+## 3. Swift Nexus Difference
+- Split layout (copy left, icon bullets right).
+- Copy: “Most agencies chase clicks. Most consultants stop at slides. We bridge both — clarity of consulting, power of execution.”
+- CTA: `See How Our Model Works`.
+- Icon cards: Integrated Command, Reputation Safeguard, Systems > Campaigns.
 
 ---
 
-## 5. SOCIAL PROOF SECTION
-**Current:** Client logos with basic text
-**ConversionWise Model:**
-- Customer review quotes with 5-star ratings
-- Circular placeholder images for customer photos or icons
-- "Social Proof" label
-- CTA button below reviews
-
-**Action Items for Rank First:**
-- [x] Have testimonial quotes ✅
-- [ ] Add 5-star rating display above each testimonial
-- [ ] Add circular avatar placeholders (or use initials/photos if available)
-- [ ] Place testimonials in grid format (3-4 per row)
-- [ ] Add "Rated 5.0 on Google" or similar badge
-- [ ] Include CTA: "See All Success Stories" or "Read More Reviews"
+## 4. Two Paths (Choice Architecture)
+- Heading: “Choose Your Growth Path” + intro sentence about strategy/execution.
+- Card 1: **Strategic Consulting**
+  - Subheading “Clarity That Converts”.
+  - Sections: “We Specialize In” (Strategic Analysis, Leadership & Reputation with bullet lists) and “Ideal For” (emoji bullet list).
+  - CTA `See Consulting Approach →`.
+- Card 2: **Performance Execution**
+  - Subheading “Precision in Every Channel”.
+  - Sections: “We Deliver” (Acquisition Systems, Retention & Optimization) and “Ideal For” (emoji bullet list).
+  - CTA `See How We Execute →`.
+- Footer callout: “Not sure which path fits your brand? …” + `Request a Strategic Audit` button.
 
 ---
 
-## 6. PRODUCT/SERVICES SHOWCASE
-**Current:** Services grid with 9 cards
-**ConversionWise Model:**
-- "Our Best Sellers" section title
-- 3 service preview cards with images
-- Pricing displayed prominently
-- Call-to-action for "Add to Cart" (adapt to "Learn More" or "Get Started")
-
-**Action Items for Rank First:**
-- [x] Service cards with icons ✅
-- [ ] Highlight 3 core/flagship services prominently
-- [ ] Add pricing hints if applicable ("Starting at $X")
-- [ ] Replace generic icons with custom illustrations or photos
-- [ ] Each card should have:
-  - Service image/illustration
-  - Service name
-  - 1-2 sentence description
-  - Pricing or "Custom Quote"
-  - CTA button: "Learn More" or "Get Quote"
+## 5. Proof Section
+- Headline: “Real Systems. Real Results.”
+- Three horizontal case cards with imagery, metric chips, and `View Case Study` button.
 
 ---
 
-## 7. FEATURES SECTION
-**Current:** AI & Automation showcase
-**ConversionWise Model:**
-- Section with brief text highlighting key benefits
-- Visual layout with icons or images
-- May include stats or metrics
-
-**Action Items for Rank First:**
-- [x] AI features section exists ✅
-- [ ] Convert to simpler "Why Choose Rank First" section
-- [ ] Include 4-6 key differentiators:
-  - Data-driven strategies
-  - 94% client retention
-  - Revenue-focused approach
-  - AI-powered automation
-  - Transparent reporting
-  - Dedicated account management
-- [ ] Use icons + headline + description format
+## 6. Testimonials Carousel
+- Single-card auto carousel titled “Mandates We Steward”.
+- Gold quote icon, uppercase author line, dot controls beneath.
 
 ---
 
-## 8. EMOTIVE HEADLINES + CTA SECTIONS
-**Current:** Mid-page CTA exists
-**ConversionWise Model:**
-- Multiple emotive headlines throughout page
-- Each followed by CTA button
-- Breaks up content and maintains engagement
-
-**Action Items for Rank First:**
-- [x] Mid-page CTA section ✅
-- [ ] Add 2-3 more CTA sections strategically placed:
-  - After Services section
-  - After Case Studies section
-  - Before FAQ section
-- [ ] Vary headline copy to address different pain points:
-  - "Stop Wasting Money on Marketing That Doesn't Convert"
-  - "Your Competitors Are Already Ranking. Will You?"
-  - "Ready to Turn Your Website Into a Revenue Machine?"
+## 7. Who We Work With
+- Cards for Growth-Stage Brands, In-House Teams, Leaders & Public Figures.
+- Supporting copy: “Whether you’re scaling revenue or reputation, we help you command both.”
 
 ---
 
-## 9. PRODUCT CATEGORIES SECTION
-**Current:** Not applicable (services, not e-commerce)
-**ConversionWise Model:**
-- Category images with names
-- Links to category pages
-
-**Action Items for Rank First:**
-- [ ] Adapt as "Service Packages" or skip
-- [ ] Alternative: Create "Industries We Serve" section:
-  - SaaS & Technology
-  - E-commerce & Retail
-  - Professional Services
-  - Healthcare & Wellness
-  - B2B & Manufacturing
+## 8. Pricing Preview
+- Headline: “Clarity on Investment. Zero Ambiguity on Accountability.”
+- Three tiers: Foundation, Growth Accelerator, Dominance Partnership with outcome-oriented bullets.
+- CTA: `Book a Consultation`.
 
 ---
 
-## 10. FAQ SECTION
-**Current:** Expandable FAQ cards
-**ConversionWise Model:**
-- Expandable questions with answers
-- Clean, accordion-style layout
-
-**Action Items for Rank First:**
-- [x] FAQ section exists ✅
-- [ ] Ensure minimum 6-8 questions
-- [ ] Cover common objections:
-  - Pricing concerns
-  - Timeline expectations
-  - Results guarantees
-  - Comparison to competitors
-  - Process clarity
-- [ ] Add search functionality if FAQ grows large
+## 9. Ethos Section
+- Obsidian background with centered copy: “We don’t chase trends. We build systems that outlast them...”
+- Reinforces capital-investment style governance and conviction.
 
 ---
 
-## 11. NEWSLETTER SIGNUP
-**Current:** Integrated in contact form
-**ConversionWise Model:**
-- Dedicated email signup form
-- Subscribe button
-- Clear value proposition for newsletter
-
-**Action Items for Rank First:**
-- [ ] Add standalone newsletter section before footer
-- [ ] Headline: "Get Weekly Marketing Insights That Actually Work"
-- [ ] Subheadline: "Join 5,000+ marketers getting our best strategies delivered every Tuesday"
-- [ ] Simple email input + subscribe button
-- [ ] Optional: Lead magnet offer ("Get our free SEO checklist")
+## 10. Final CTA
+- Bone White background.
+- Headline: “Let’s Build the System That Drives Your Next Stage of Growth.”
+- Body copy matches hero promise and reaffirms partnership payoff.
+- CTAs: `Request Your Strategic Audit` (gold) + `Apply for Partnership` (outline).
 
 ---
 
-## 12. FOOTER
-**Current:** 4-column footer with links
-**ConversionWise Model:**
-- Multiple columns with links (site map, policies, contact info)
-- Social media icons
-- Payment method logos (if e-commerce)
-
-**Action Items for Rank First:**
-- [x] Multi-column footer ✅
-- [ ] Add social proof elements:
-  - "Trusted by 150+ brands"
-  - Awards/certifications
-  - Industry partnerships
-- [x] Social media icons ✅
-- [ ] Add newsletter signup in footer as backup
-- [ ] Include business hours if applicable
-- [ ] Add trust badges: "Google Partner", "HubSpot Certified", etc.
-
----
-
-## 13. ADDITIONAL RECOMMENDATIONS
-
-### A. Above-the-Fold Optimization
-- [ ] Ensure hero section + CTA fully visible without scrolling
-- [ ] Add urgency element: "Limited spots available" or "Book this week and save 15%"
-- [ ] Consider adding live chat widget
-
-### B. Trust Signals Throughout
-- [ ] Add client logos section near top (after hero)
-- [ ] Display certifications and awards
-- [ ] Show "As Seen In" media mentions if available
-- [ ] Add security badges if collecting payments
-
-### C. Visual Hierarchy
-- [ ] Use consistent spacing between sections
-- [ ] Alternate dark/light backgrounds (currently using dark theme)
-- [ ] Add subtle animations on scroll (already using Framer Motion)
-- [ ] Ensure all CTAs stand out with accent color
-
-### D. Mobile Optimization
-- [ ] Test all sections on mobile devices
-- [ ] Ensure touch targets are large enough
-- [ ] Optimize images for mobile loading speed
-- [ ] Consider mobile-specific CTAs (click-to-call, WhatsApp)
-
-### E. Lead Magnets & CTAs
-- [ ] Create multiple lead magnets:
-  - Free SEO Audit ($2,500 value) ✅
-  - Marketing ROI Calculator
-  - Industry Benchmark Report
-  - Email Templates Pack
-  - Content Calendar Template
-- [ ] Use different CTAs for different stages:
-  - Top of page: "Get Free Audit"
-  - Middle: "See Our Work"
-  - Bottom: "Book Strategy Call"
-
----
-
-## IMPLEMENTATION PRIORITY
-
-### Phase 1: Critical (Week 1)
-1. Hero section optimization with image
-2. Value proposition section
-3. 3-step transformation process
-4. Enhanced social proof with ratings
-
-### Phase 2: Important (Week 2)
-1. Service showcase redesign (highlight top 3)
-2. Additional mid-page CTAs
-3. Newsletter signup section
-4. Trust badges and certifications
-
-### Phase 3: Enhancement (Week 3)
-1. Industries served section
-2. Mobile optimization pass
-3. Additional lead magnets
-4. Live chat integration
-5. Final polish and testing
-
----
-
-## CONVERSION OPTIMIZATION CHECKLIST
-
-- [ ] Clear value proposition within 3 seconds of landing
-- [ ] Primary CTA visible above the fold
-- [ ] Social proof within first scroll
-- [ ] Benefit-focused copy (not feature-focused)
-- [ ] Multiple CTAs throughout page
-- [ ] FAQ addresses common objections
-- [ ] Mobile-responsive design
-- [ ] Fast page load time (< 3 seconds)
-- [ ] Clear visual hierarchy
-- [ ] Trust signals prominently displayed
-- [ ] Easy navigation
-- [ ] No dead ends (every section has next step)
-
----
-
-## METRICS TO TRACK POST-LAUNCH
-
-1. **Conversion Rate:** Form submissions / Total visitors
-2. **Bounce Rate:** Should decrease with better structure
-3. **Time on Page:** Should increase with engaging content
-4. **Scroll Depth:** Track how far users scroll
-5. **CTA Click Rate:** Which CTAs perform best
-6. **Heat Mapping:** Where users click/hover
-7. **Exit Points:** Where users leave the page
-
----
-
-**Goal:** Transform homepage from informative to conversion-focused, following proven ConversionWise principles while maintaining Rank First's brand identity and dark theme aesthetic.
+## 11. Footer
+- Minimal dark footer, social icons, `© 2025 Swift Nexus — Marketing. Consulting. Influence.`
+- Links: Home | About | Consulting | Execution | Case Studies | Insights | Contact.

@@ -1,15 +1,7 @@
 import { motion } from 'framer-motion'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { Target, TrendingUp, Users, Zap, ArrowRight, CheckCircle2 } from 'lucide-react'
-
-// Color mapping for Tailwind classes (prevents purging)
-const colorClasses = {
-  purple: 'from-purple-500 to-purple-600',
-  blue: 'from-blue-500 to-blue-600',
-  cyan: 'from-cyan-500 to-cyan-600',
-  indigo: 'from-indigo-500 to-indigo-600'
-} as const
+import { Target, TrendingUp, Users, Zap, ArrowRight } from 'lucide-react'
 
 export default function About() {
   return (
@@ -57,7 +49,7 @@ export default function About() {
               <h2 className="text-3xl md:text-4xl font-bold">Our Story</h2>
               <div className="space-y-4 text-lg text-gray-700">
                 <p>
-                  At Rank First, we do not chase vanity metrics. We do not care about likes, followers, or brand awareness that does not convert. We care about <strong>measurable growth</strong>: the kind that shows up in your revenue reports, not just your analytics dashboard.
+                  At Swift Nexus, we do not chase vanity metrics. We do not care about likes, followers, or brand awareness that does not convert. We care about <strong>measurable growth</strong>: the kind that shows up in your revenue reports, not just your analytics dashboard.
                 </p>
                 <p>
                   We built this agency on a simple truth: your most valuable digital asset is not your social media following. It is your email list. It is your search rankings. It is the content that brings qualified buyers to your door, ready to invest. That is why we focus on SEO, email marketing, and content strategy: the three pillars that actually move the needle.

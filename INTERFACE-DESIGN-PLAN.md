@@ -1,4 +1,4 @@
-# Rank First - Luxurious Interface Design Plan
+# Swift Nexus - Luxurious Interface Design Plan
 
 ## Design Philosophy
 
