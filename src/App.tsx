@@ -10,6 +10,7 @@ import CaseStudySaaS from '@/pages/CaseStudySaaS'
 import CaseStudyFashion from '@/pages/CaseStudyFashion'
 import CaseStudyPublicOfficial from '@/pages/CaseStudyPublicOfficial'
 import Contact from '@/pages/Contact'
+import CaseStudiesIndex from '@/pages/CaseStudiesIndex'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Navigation />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/case-studies" element={<CaseStudiesIndex />} />
           <Route path="/case-studies/the-funded-trader" element={<CaseStudyTFT />} />
           <Route path="/case-studies/toptier-trader" element={<CaseStudyTopTier />} />
           <Route path="/case-studies/saas-startup" element={<CaseStudySaaS />} />

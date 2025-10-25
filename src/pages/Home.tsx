@@ -611,10 +611,17 @@ export default function Home() {
               />
             ))}
           </div>
+
+          {/* View All CTA */}
+          <div className="mt-8 text-center">
+            <Button variant="outline" className="rounded-full border-white/15 text-white hover:text-dark hover:bg-neutral-lighter" asChild>
+              <Link to="/case-studies">View All Case Studies</Link>
+            </Button>
+          </div>
         </div>
       </section>
 
-      
+
 
       {/* Testimonials */}
       <section className="py-24 bg-dark-900">
