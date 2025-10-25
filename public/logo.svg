@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="120" viewBox="0 0 520 120" role="img" aria-labelledby="title">
+  <title id="title">Swift Nexus</title>
+  <defs>
+    <style>
+      @font-face {
+        font-family: 'Space Grotesk';
+        font-weight: 700;
+        font-style: normal;
+      }
+      .wordmark { font: 700 72px 'Space Grotesk', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    </style>
+  </defs>
+  <rect width="100%" height="100%" fill="none"/>
+  <text x="6" y="84" class="wordmark" fill="#FFFFFF" letter-spacing="1">Swift</text>
+  <text x="230" y="84" class="wordmark" fill="#10B981" letter-spacing="1">Nexus</text>
+</svg>

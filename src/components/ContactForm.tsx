@@ -12,6 +12,7 @@ import { ArrowRight, CheckCircle, Loader2 } from 'lucide-react'
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
   email: z.string().email('Please enter a valid email address'),
+  company: z.string().optional(),
   message: z.string().min(10, 'Message must be at least 10 characters')
 })
 
@@ -20,6 +21,7 @@ type ContactFormData = z.infer<typeof contactSchema>
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
+  const [toast, setToast] = useState<null | { type: 'success' | 'error'; message: string }>(null)
 
   const {
     register,
@@ -32,20 +34,46 @@ export default function ContactForm() {
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true)
+    try {
+      // Use Web3Forms for form submission (free, privacy-friendly, no backend needed)
+      // Get your access key from https://web3forms.com
+      const accessKey = (import.meta as any).env?.VITE_WEB3FORMS_KEY || 'YOUR_WEB3FORMS_ACCESS_KEY'
 
-    // Simulate API call - Replace with actual backend integration
-    await new Promise(resolve => setTimeout(resolve, 2000))
+      const formData = {
+        access_key: accessKey,
+        name: data.name,
+        email: data.email,
+        company: data.company || '',
+        message: data.message,
+        subject: 'New Contact Form Submission from Swift Nexus',
+        from_name: 'Swift Nexus Website'
+      }
 
-    console.log('Form submitted:', data)
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      })
 
-    setIsSubmitting(false)
-    setIsSuccess(true)
+      const result = await res.json()
 
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSuccess(false)
+      if (!res.ok || !result.success) {
+        throw new Error(result.message || 'Failed to submit form')
+      }
+
+      setIsSuccess(true)
+      setToast({ type: 'success', message: "Thanks! We'll get back within 24 hours." })
+      // Reset form immediately on success
       reset()
-    }, 3000)
+      // Hide success state after a short delay
+      setTimeout(() => setIsSuccess(false), 3000)
+    } catch (err) {
+      setToast({ type: 'error', message: err instanceof Error ? err.message : 'Something went wrong. Please try again.' })
+    } finally {
+      setIsSubmitting(false)
+      // Auto-hide toast
+      setTimeout(() => setToast(null), 4000)
+    }
   }
 
   if (isSuccess) {
@@ -65,7 +93,17 @@ export default function ContactForm() {
   }
 
   return (
-    <Card className="bg-white/10 backdrop-blur-lg border-white/20">
+    <Card className="bg-white/10 backdrop-blur-lg border-white/20 relative">
+      {toast && (
+        <div
+          role="status"
+          className={`pointer-events-none absolute -top-4 right-4 translate-y-[-100%] rounded-lg px-4 py-2 text-sm shadow-lg ${
+            toast.type === 'success' ? 'bg-green-500 text-white' : 'bg-red-500 text-white'
+          }`}
+        >
+          {toast.message}
+        </div>
+      )}
       <CardHeader>
         <CardTitle className="text-2xl text-white">Get Your Free Growth Audit</CardTitle>
         <CardDescription className="text-white/80">
@@ -105,6 +143,15 @@ export default function ContactForm() {
                 {errors.email.message}
               </p>
             )}
+          </div>
+
+          <div>
+            <Input
+              {...register('company')}
+              placeholder="Company (Optional)"
+              className="bg-white/90 border-white/30 placeholder:text-gray-400"
+              aria-label="Your company name"
+            />
           </div>
 
           <div>

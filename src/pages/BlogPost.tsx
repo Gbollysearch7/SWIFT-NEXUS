@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
+import { CALENDLY_URL } from '@/lib/constants'
 import { Card, CardContent } from '@/components/ui/card'
 import { Calendar, Clock, ArrowLeft, Share2, Linkedin, Twitter, Facebook } from 'lucide-react'
 import { blogPosts } from '@/data/blogPosts'
@@ -262,7 +263,7 @@ export default function BlogPost() {
               Get your free growth audit and start dominating search results.
             </p>
             <Button size="lg" variant="secondary" className="bg-white text-dark hover:bg-gray-100" asChild>
-              <Link to="/#contact">Book Your Free Audit</Link>
+              <a href={CALENDLY_URL}>Book Your Free Audit</a>
             </Button>
           </motion.div>
         </div>

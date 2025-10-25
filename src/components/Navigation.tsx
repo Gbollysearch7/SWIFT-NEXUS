@@ -1,6 +1,8 @@
-import { useState } from 'react'
-import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
+import { useState, useEffect } from 'react'
+import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/button'
+import { Link } from 'react-router-dom'
+import { CALENDLY_URL } from '@/lib/constants'
 import { Menu, X } from 'lucide-react'
 import { staggerContainer, fadeInUp } from '@/lib/animations'
 
@@ -13,11 +15,23 @@ export default function Navigation() {
     setIsScrolled(latest > 24)
   })
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [mobileMenuOpen])
+
   const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Case Studies', href: '#case-studies' },
-    { name: 'Pricing', href: '#pricing' }
+    { name: 'About', href: '/#about' },
+    { name: 'Services', href: '/#services' },
+    { name: 'Case Studies', href: '/case-studies' },
+    { name: 'Pricing', href: '/#pricing' }
   ]
 
   return (
@@ -26,7 +40,7 @@ export default function Navigation() {
       role="navigation"
       aria-label="Main navigation"
       animate={{
-        backgroundColor: isScrolled ? 'rgba(13, 13, 13, 0.96)' : 'rgba(15, 30, 53, 0.82)',
+        backgroundColor: isScrolled ? 'rgba(13, 13, 13, 0.96)' : 'rgba(13, 13, 13, 0.86)',
         backdropFilter: isScrolled ? 'blur(14px)' : 'blur(8px)',
         borderColor: isScrolled ? 'rgba(255,255,255,0.08)' : 'rgba(255,255,255,0)'
       }}
@@ -39,9 +53,9 @@ export default function Navigation() {
             animate={{ opacity: 1, x: 0 }}
             className="text-xl font-display font-semibold"
           >
-            <a href="#home" className="text-white" aria-label="Swift Nexus - Home">
-              Swift Nexus
-            </a>
+            <Link to="/" className="inline-flex items-center px-1" aria-label="Swift Nexus - Home">
+              <img src="/logo.svg" alt="Swift Nexus" className="h-8 md:h-9 w-auto" />
+            </Link>
           </motion.div>
 
           {/* Desktop Menu */}
@@ -52,17 +66,20 @@ export default function Navigation() {
             initial="hidden"
             animate="visible"
           >
-            {navLinks.map((link) => (
-              <motion.a
-                key={link.name}
-                href={link.href}
-                variants={fadeInUp}
-            className="text-neutral-light hover:text-neutral-lighter transition-colors duration-200 font-medium text-xs relative after:absolute after:left-0 after:bottom-[-8px] after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-accent after:transition-transform after:duration-300 hover:after:scale-x-100"
-                role="menuitem"
-              >
-                {link.name}
-              </motion.a>
-            ))}
+            {navLinks.map((link) => {
+              const MotionLink = motion(Link)
+              return (
+                <MotionLink
+                  key={link.name}
+                  to={link.href}
+                  variants={fadeInUp}
+                  className="text-neutral-light hover:text-neutral-lighter transition-colors duration-200 font-medium text-xs relative after:absolute after:left-0 after:bottom-[-8px] after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-accent after:transition-transform after:duration-300 hover:after:scale-x-100"
+                  role="menuitem"
+                >
+                  {link.name}
+                </MotionLink>
+              )
+            })}
           </motion.div>
 
           <div className="hidden md:flex items-center gap-4">
@@ -71,7 +88,7 @@ export default function Navigation() {
               className="px-5 py-2 rounded-lg transition-all duration-200 text-sm font-semibold shadow-[0_12px_30px_rgba(212,175,55,0.28)]"
               asChild
             >
-              <a href="#final-cta" aria-label="Request a strategic audit">Request Audit</a>
+              <Link to="/contact" aria-label="Request a strategic audit">Request Audit</Link>
             </Button>
             <Button
               size="sm"
@@ -79,7 +96,7 @@ export default function Navigation() {
               className="px-5 py-2 rounded-lg transition-all duration-200 text-sm font-semibold border-white/15 text-white hover:text-dark hover:bg-neutral-lighter"
               asChild
             >
-              <a href="#final-cta" aria-label="Book a consultation">Book Consultation</a>
+              <a href={CALENDLY_URL} aria-label="Book a consultation">Book Consultation</a>
             </Button>
           </div>
 
@@ -95,34 +112,90 @@ export default function Navigation() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <motion.div
-            id="mobile-menu"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="md:hidden py-6 space-y-4 border-t border-dark-600"
-            role="menu"
-          >
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="block text-neutral-light hover:text-white transition-colors py-2 font-medium uppercase tracking-wide"
+        {/* Mobile Menu Overlay */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <>
+              {/* Backdrop */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 md:hidden"
                 onClick={() => setMobileMenuOpen(false)}
-                role="menuitem"
+                aria-hidden="true"
+              />
+
+              {/* Slide-in Panel */}
+              <motion.div
+                id="mobile-menu"
+                initial={{ x: '100%' }}
+                animate={{ x: 0 }}
+                exit={{ x: '100%' }}
+                transition={{ type: 'spring', damping: 30, stiffness: 300 }}
+                className="fixed top-0 right-0 bottom-0 w-[85%] max-w-sm bg-dark-900 z-50 md:hidden shadow-2xl"
+                role="menu"
               >
-                {link.name}
-              </a>
-            ))}
-            <Button size="sm" className="w-full rounded-lg shadow-[0_12px_30px_rgba(212,175,55,0.28)]" asChild>
-              <a href="#final-cta" aria-label="Request a strategic audit">Request Audit</a>
-            </Button>
-            <Button size="sm" variant="outline" className="w-full rounded-lg border-white/15 text-white hover:text-dark hover:bg-neutral-lighter" asChild>
-              <a href="#final-cta" aria-label="Book a consultation">Book Consultation</a>
-            </Button>
-          </motion.div>
-        )}
+                <div className="flex flex-col h-full">
+                  {/* Header */}
+                  <div className="flex items-center justify-between p-6 border-b border-white/10">
+                    <span className="text-lg font-semibold text-white">Menu</span>
+                    <button
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="p-2 rounded-md hover:bg-white/10 transition-colors"
+                      aria-label="Close menu"
+                    >
+                      <X className="w-6 h-6 text-white" />
+                    </button>
+                  </div>
+
+                  {/* Navigation Links */}
+                  <nav className="flex-1 overflow-y-auto py-8 px-6">
+                    <div className="space-y-2">
+                      {navLinks.map((link, idx) => (
+                        <motion.div
+                          key={link.name}
+                          initial={{ opacity: 0, x: 20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: idx * 0.1 }}
+                        >
+                          <Link
+                            to={link.href}
+                            className="block text-lg text-neutral-light hover:text-white hover:bg-white/5 transition-all py-3 px-4 rounded-lg font-medium uppercase tracking-wider"
+                            onClick={() => setMobileMenuOpen(false)}
+                            role="menuitem"
+                          >
+                            {link.name}
+                          </Link>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </nav>
+
+                  {/* CTA Buttons */}
+                  <div className="p-6 space-y-3 border-t border-white/10">
+                    <Button
+                      size="lg"
+                      className="w-full rounded-lg shadow-[0_12px_30px_rgba(212,175,55,0.28)]"
+                      asChild
+                    >
+                      <Link to="/contact" onClick={() => setMobileMenuOpen(false)} aria-label="Request a strategic audit">Request Audit</Link>
+                    </Button>
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="w-full rounded-lg border-white/15 text-white hover:text-dark hover:bg-neutral-lighter"
+                      asChild
+                    >
+                      <a href={CALENDLY_URL} onClick={() => setMobileMenuOpen(false)} aria-label="Book a consultation">Book Consultation</a>
+                    </Button>
+                  </div>
+                </div>
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
       </div>
     </motion.nav>
   )

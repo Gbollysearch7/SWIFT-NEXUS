@@ -84,7 +84,7 @@ export default function NotFound() {
               <Link to="/#pricing" className="text-accent hover:text-accent-dark transition-colors">
                 Pricing
               </Link>
-              <Link to="/#contact" className="text-accent hover:text-accent-dark transition-colors">
+              <Link to="/contact" className="text-accent hover:text-accent-dark transition-colors">
                 Contact
               </Link>
             </div>

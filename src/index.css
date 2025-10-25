@@ -76,6 +76,16 @@
     -webkit-mask-composite: xor;
     mask-composite: exclude;
   }
+
+  /* Hide scrollbar for carousel */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* Custom scrollbar - Dark theme */
@@ -121,8 +131,8 @@ html {
 }
 
 #final-cta {
-  background: linear-gradient(180deg, #F9F7F2 0%, #ECE6D9 50%, #E3F4ED 100%);
-  color: var(--ink-800);
+  background: #000; /* unify with site dark theme */
+  color: #fff;
 }
 
 #final-cta .final-cta__container {
@@ -130,11 +140,11 @@ html {
   margin: 0 auto;
   padding: 6rem 1.25rem;
   text-align: center;
-  background: rgba(255, 255, 255, 0.82);
+  background: rgba(13, 13, 13, 0.9);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 28px;
-  box-shadow: 0 25px 55px rgba(15, 23, 42, 0.12);
+  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.45);
 }
 
 @media (min-width: 1024px) {
@@ -144,9 +154,9 @@ html {
 }
 
 .dark #final-cta .final-cta__container {
-  background: rgba(13, 13, 13, 0.82);
-  border: 1px solid rgba(229, 231, 235, 0.08);
-  box-shadow: 0 25px 55px rgba(15, 23, 42, 0.35);
+  background: rgba(13, 13, 13, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.45);
 }
 
 #final-cta .final-cta__kicker {
@@ -163,7 +173,7 @@ html {
   font-size: clamp(1.75rem, 1.2rem + 2.6vw, 3.25rem);
   max-width: 22ch;
   margin: 0.75rem auto 1rem;
-  color: var(--ink-800);
+  color: #fff;
 }
 
 #final-cta .final-cta__copy {
@@ -171,12 +181,9 @@ html {
   margin: 0.75rem auto;
   font-size: clamp(1rem, 0.95rem + 0.4vw, 1.125rem);
   line-height: 1.6;
-  color: rgba(0, 0, 0, 0.78);
-}
-
-.dark #final-cta .final-cta__copy {
   color: rgba(243, 244, 246, 0.85);
 }
+
 
 .cta-vignette {
   position: relative;

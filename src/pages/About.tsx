@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Target, TrendingUp, Users, Zap, ArrowRight } from 'lucide-react'
+import { CALENDLY_URL } from '@/lib/constants'
 
 export default function About() {
   return (
@@ -17,7 +18,7 @@ export default function About() {
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               We are not just another <span className="text-accent">marketing agency</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-neutral-light/80 max-w-3xl mx-auto">
               We are a team obsessed with one thing: turning your digital presence into a revenue-generating machine.
             </p>
           </motion.div>
@@ -25,7 +26,7 @@ export default function About() {
       </section>
 
       {/* Story Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -47,7 +48,7 @@ export default function About() {
               className="space-y-6"
             >
               <h2 className="text-3xl md:text-4xl font-bold">Our Story</h2>
-              <div className="space-y-4 text-lg text-gray-700">
+              <div className="space-y-4 text-lg text-neutral-light/80">
                 <p>
                   At Swift Nexus, we do not chase vanity metrics. We do not care about likes, followers, or brand awareness that does not convert. We care about <strong>measurable growth</strong>: the kind that shows up in your revenue reports, not just your analytics dashboard.
                 </p>
@@ -59,8 +60,8 @@ export default function About() {
                 </p>
               </div>
 
-              <div className="bg-purple-100 border-l-4 border-purple-600 p-6">
-                <p className="font-semibold text-purple-900 text-lg">
+              <div className="bg-white/10 border-l-4 border-accent p-6">
+                <p className="font-semibold text-white/90 text-lg">
                   Our mission is simple: help ambitious brands rank first, stay first, and turn their digital presence into a revenue-generating machine.
                 </p>
               </div>
@@ -81,7 +82,7 @@ export default function About() {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               What We <span className="text-accent">Stand For</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-neutral-light/80 max-w-2xl mx-auto">
               These principles guide everything we do, from strategy to execution.
             </p>
           </motion.div>
@@ -136,7 +137,7 @@ export default function About() {
       </section>
 
       {/* Team Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -147,7 +148,7 @@ export default function About() {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Meet the <span className="text-accent">Team</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-neutral-light/80 max-w-3xl mx-auto">
               Our team combines data-driven strategists, SEO specialists, conversion copywriters, and growth marketers who have helped generate millions in revenue for clients across e-commerce, SaaS, and service-based businesses.
             </p>
           </motion.div>
@@ -180,7 +181,7 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card className="overflow-hidden hover:shadow-xl transition-shadow">
+                <Card className="overflow-hidden hover:shadow-xl transition-shadow bg-dark-900/80 border-white/10 text-neutral-light">
                   <div className="aspect-square overflow-hidden">
                     <img
                       src={member.image}
@@ -190,8 +191,8 @@ export default function About() {
                   </div>
                   <CardContent className="p-6">
                     <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-                    <p className="text-purple-600 font-semibold mb-2">{member.role}</p>
-                    <p className="text-gray-600">{member.bio}</p>
+                    <p className="text-accent font-semibold mb-2">{member.role}</p>
+                    <p className="text-neutral-light/80">{member.bio}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -259,13 +260,13 @@ export default function About() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" className="bg-white text-purple-600 hover:bg-gray-100" asChild>
-                <a href="/#contact">
+                <a href={CALENDLY_URL}>
                   Book Your Free Audit
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </a>
               </Button>
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" asChild>
-                <a href="/#case-studies">View Case Studies</a>
+                <a href="/case-studies">View Case Studies</a>
               </Button>
             </div>
           </motion.div>
